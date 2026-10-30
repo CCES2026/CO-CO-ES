@@ -36,6 +36,7 @@ background:linear-gradient(rgba(11,42,88,.55),rgba(11,42,88,.78)),url(images/ban
 .card{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--leaf);border-radius:10px;padding:1rem 1.2rem}
 .card.b{border-left-color:var(--blue)}.card.s{border-left-color:var(--sun)}
 .card p{margin:.2rem 0;color:var(--mute)}
+.person{display:flex;gap:1rem;align-items:center}.person img{width:84px;height:100px;object-fit:cover;object-position:top;border-radius:8px;border:2px solid var(--line);flex:none}.person h3{margin:0;font-size:1.1rem}
 .photo{aspect-ratio:4/3;border-radius:10px;background:linear-gradient(135deg,var(--line),var(--card));display:grid;place-items:center;color:var(--mute);font-weight:700;border:1px dashed var(--mute);text-align:center;padding:.5rem}
 ul.l{padding-left:1.2rem}ul.l li{margin:.25rem 0}
 .sec{margin:2rem 0 .5rem;padding-top:1rem;border-top:2px solid var(--line)}
@@ -213,10 +214,20 @@ const SAMPLE={
         {category:"upcoming events",title:"Brigada Eskwela",date:"2026-11-15",body:"Volunteers are invited to help clean and repair classrooms."},
         {category:"advisories",title:"Class schedule reminder",date:"2026-10-30",body:"Please check the latest memo for schedule changes."},
         {category:"achievements",title:"District Reading Contest",date:"2026-10-10",body:"Congratulations to our young readers!"}],
-  Personnel:[{group:"Teaching Personnel",name:"(Name)",position:"Teacher I"},
-             {group:"Non-Teaching Personnel",name:"(Name)",position:"Administrative Aide"},
-             {group:"School Governance Council",name:"(Name)",position:"Chairperson"},
-             {group:"School PTA Officers",name:"(Name)",position:"President"}],
+  Personnel:[
+  {group:"Teaching Personnel",name:"Albert F. Factor",position:"Principal I",photo:"images/staff/albert-factor.jpg"},
+  {group:"Teaching Personnel",name:"Claire Marie B. Pagmanoja",position:"Kindergarten Teacher",photo:"images/staff/claire-marie-pagmanoja.jpg"},
+  {group:"Teaching Personnel",name:"Claire F. Carna",position:"Grade I Teacher",photo:"images/staff/claire-carna.jpg"},
+  {group:"Teaching Personnel",name:"Michelle F. Fronda",position:"Grade II Teacher",photo:"images/staff/michelle-fronda.jpg"},
+  {group:"Teaching Personnel",name:"Claire Ann M. Fruelda",position:"Grade III Teacher",photo:"images/staff/claire-ann-fruelda.jpg"},
+  {group:"Teaching Personnel",name:"Cyril Ann F. Fronda",position:"Grade IV Teacher",photo:"images/staff/cyril-ann-fronda.jpg"},
+  {group:"Teaching Personnel",name:"Ranny F. Fajilan",position:"Grade V Teacher",photo:"images/staff/ranny-fajilan.jpg"},
+  {group:"Teaching Personnel",name:"Ryan F. Fajanilan",position:"Grade VI Teacher",photo:"images/staff/ryan-fajanilan.jpg"},
+  {group:"Non-Teaching Personnel",name:"Dezza Belle F. Andrade",position:"Administrative Officer II",photo:""},
+  {group:"School Governance Council",name:"Albert F. Factor",position:"Chairman",photo:""},
+  {group:"School Governance Council",name:"Ryan F. Fajanilan",position:"Co-Chairman",photo:""},
+  {group:"School Governance Council",name:"Eduard F. Factor",position:"Co-Chairman",photo:""},
+  {group:"School PTA Officers",name:"Carlo F. Fronda",position:"President",photo:""}],
   Drills:[{drill:"Earthquake Drill (NSED)",date:"(date)",time:"(time)"},{drill:"Fire Drill",date:"(date)",time:"(time)"}],
   Downloads:[{title:"Enrollment Form",category:"Enrollment Forms",date:"2026-05-01",url:"#"}],
   Gallery:[]
@@ -270,7 +281,7 @@ async function init(){
   });
 
   const groups={};ppl.forEach(p=>(groups[p.group]=groups[p.group]||[]).push(p));
-  $("#adminLists").innerHTML=Object.keys(groups).map(g=>`<h3 class="sec">${esc(g)}</h3><div class="grid">${groups[g].map(p=>`<div class="card"><h3>${esc(p.name)}</h3><p>${esc(p.position)}</p></div>`).join("")}</div>`).join("");
+  $("#adminLists").innerHTML=Object.keys(groups).map(g=>`<h3 class="sec">${esc(g)}</h3><div class="grid">${groups[g].map(p=>`<div class="card person">${p.photo?`<img src="${esc(p.photo)}" alt="${esc(p.name)}" loading="lazy">`:""}<div><h3>${esc(p.name)}</h3><p>${esc(p.position)}</p></div></div>`).join("")}</div>`).join("");
 
   $("#drills").innerHTML=drills.map(d=>`<tr><td>${esc(d.drill)}</td><td>${esc(d.date)}</td><td>${esc(d.time)}</td></tr>`).join("");
   $("#dl").innerHTML=dl.map(d=>`<tr><td>${esc(d.title)}</td><td>${esc(d.category)}</td><td>${esc(d.date)}</td><td><a href="${esc(d.url)}" target="_blank" rel="noopener">Download</a></td></tr>`).join("");
