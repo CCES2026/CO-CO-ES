@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Colong-Colong Elementary School</title>
+<link rel="icon" href="assets/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#123c7a;--blue2:#0b2a58;--sun:#f5b301;--leaf:#2e7d32;--bg:#f3f7fb;--card:#fff;--ink:#1c2733;--mute:#5b6b7c;--line:#d8e2ec}
+@media(prefers-color-scheme:dark){:root{--bg:#0e1722;--card:#16222f;--ink:#e8eef5;--mute:#9db0c3;--line:#273a4d;--blue:#7fb0ff;--blue2:#0b2a58}}
+*{box-sizing:border-box}html{scroll-padding-top:70px}
+body{margin:0;font:400 1rem/1.65 Nunito,system-ui,sans-serif;background:var(--bg);color:var(--ink)}
+h1,h2,h3{font-family:'Baloo 2',sans-serif;line-height:1.2;margin:0 0 .5rem;color:var(--blue)}
+h2{font-size:2rem}h3{font-size:1.25rem}a{color:var(--blue)}
+header{position:sticky;top:0;z-index:20;background:var(--blue2);display:flex;align-items:center;gap:.75rem;padding:.4rem 1rem;flex-wrap:wrap}
+.brand{font:800 1.1rem 'Baloo 2';color:#fff;text-decoration:none;margin-right:auto}
+nav{display:flex;gap:.15rem;flex-wrap:wrap}
+nav a{color:#dbe7ff;text-decoration:none;padding:.35rem .7rem;border-radius:99px;font-weight:700;font-size:.92rem}
+nav a:hover,nav a.on{background:var(--sun);color:#1c2733}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+main{max-width:1050px;margin:0 auto;padding:1.5rem 1rem 3rem}
+.page{display:none}.page.on{display:block}
+.hero{margin:-1.5rem -1rem 1.5rem;padding:3.5rem 1.5rem 3rem;text-align:center;color:#fff;
+background:linear-gradient(rgba(11,42,88,.55),rgba(11,42,88,.78)),url(assets/banner.jpg) center/cover}
+.hero img.logo{width:110px;height:110px;border-radius:50%;background:#fff;border:5px solid var(--sun);object-fit:cover}
+.welcome{font:800 clamp(1.9rem,6vw,3.6rem)/1.1 'Baloo 2';margin:.8rem 0 .4rem;color:#fff}
+.welcome span{display:inline-block;opacity:0;transform:translateY(.6em) rotate(-4deg);animation:pop .5s forwards}
+.welcome .w{display:inline-block;white-space:nowrap}
+.school{color:var(--sun)}
+@keyframes pop{to{opacity:1;transform:none}}
+.tag{font-size:1.15rem;font-style:italic;color:#dbe7ff}
+.btn{display:inline-block;background:var(--sun);color:#1c2733;border:0;padding:.6rem 1.3rem;border-radius:99px;font:700 1rem Nunito;cursor:pointer;text-decoration:none}
+.btn:hover{filter:brightness(1.08)}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));margin:1rem 0}
+.card{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--leaf);border-radius:10px;padding:1rem 1.2rem}
+.card.b{border-left-color:var(--blue)}.card.s{border-left-color:var(--sun)}
+.card p{margin:.2rem 0;color:var(--mute)}
+.photo{aspect-ratio:4/3;border-radius:10px;background:linear-gradient(135deg,var(--line),var(--card));display:grid;place-items:center;color:var(--mute);font-weight:700;border:1px dashed var(--mute);text-align:center;padding:.5rem}
+ul.l{padding-left:1.2rem}ul.l li{margin:.25rem 0}
+.sec{margin:2rem 0 .5rem;padding-top:1rem;border-top:2px solid var(--line)}
+.sub{color:var(--mute);margin-top:0}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:10px;overflow:hidden}
+th,td{padding:.6rem .8rem;border-bottom:1px solid var(--line);text-align:left}th{background:var(--blue2);color:#fff}
+.scroll{overflow-x:auto}
+form{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1.2rem;display:grid;gap:.8rem;max-width:560px}
+label{display:grid;gap:.2rem;font-weight:700}
+input,select{font:inherit;padding:.55rem;border:1px solid var(--mute);border-radius:8px;background:var(--bg);color:var(--ink)}
+#msg{font-weight:700}.ok{color:var(--leaf)}.err{color:#c62828}
+.tel{font:700 1.3rem 'Baloo 2';color:var(--blue)}
+iframe{width:100%;height:320px;border:0;border-radius:10px}
+footer{background:var(--blue2);color:#dbe7ff;text-align:center;padding:1.2rem;font-size:.9rem}
+@media(prefers-reduced-motion:reduce){.welcome span{animation:none;opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="#home"><img src="assets/logo.png" alt="" style="height:34px;vertical-align:middle;margin-right:.4rem;background:#fff;border-radius:50%">Colong-Colong ES</a>
+  <nav id="nav" aria-label="Main menu">
+    <a href="#home">Home</a><a href="#about">About Us</a><a href="#admin">Administration</a><a href="#academics">Academic Programs</a><a href="#news">News &amp; Events</a><a href="#drrm">DRRM Corner</a><a href="#gallery">Gallery</a><a href="#downloads">Downloads</a><a href="#contact">Contact Us</a>
+  </nav>
+</header>
+<main>
+
+<!-- HOME -->
+<section class="page" id="home">
+  <div class="hero">
+    <img class="logo" alt="Colong-Colong Elementary School logo" src="assets/logo.png"><rect width='100' height='100' fill='white'/><text x='50' y='64' font-size='46' text-anchor='middle'>🏫</text><text x='50' y='88' font-size='10' text-anchor='middle' fill='%23123c7a' font-family='sans-serif'>YOUR LOGO</text></svg>">
+    <h1 class="welcome" id="welcome" aria-label="Welcome to Colong-Colong Elementary School"></h1>
+    <p class="tag" id="tagline">Commitment, Character, Education, Service</p>
+    <a class="btn" href="#about">Learn about our school</a>
+  </div>
+  <h2>Latest from our school</h2>
+  <div class="grid" id="homeNews"></div>
+</section>
+
+<!-- ABOUT -->
+<section class="page" id="about">
+  <h2>About Us</h2>
+  <h3>School Location</h3>
+  <p id="addr1">Colong-Colong, Corcuera, Romblon, Philippines</p>
+  <h3 class="sec">Vision</h3>
+  <p>We dream of Filipinos who passionately love their country and whose values and competencies enable them to realize their full potential and contribute meaningfully to building the nation.</p>
+  <h3 class="sec">Mission</h3>
+  <ul class="l">
+    <li>Protect and promote the right of every Filipino to quality, equitable, culture-based, and complete basic education.</li>
+    <li>Provide a child-friendly, gender-sensitive, safe, and motivating school environment.</li>
+    <li>Work together with parents, teachers, and the community to help every learner succeed.</li>
+  </ul>
+  <h3 class="sec">Core Values</h3>
+  <div class="grid">
+    <div class="card"><h3>Maka-Diyos</h3></div><div class="card b"><h3>Maka-tao</h3></div>
+    <div class="card s"><h3>Makakalikasan</h3></div><div class="card"><h3>Makabansa</h3></div>
+  </div>
+  <p class="sub">Edit this section with the school’s own Vision, Mission, and Core Values.</p>
+</section>
+
+<!-- ADMIN -->
+<section class="page" id="admin">
+  <h2>Administration</h2>
+  <div id="adminLists"></div>
+</section>
+
+<!-- ACADEMICS + LEARNER SERVICES -->
+<section class="page" id="academics">
+  <h2>Academic Programs</h2>
+  <div class="grid">
+    <div class="card"><h3>Kindergarten Program</h3><p>Play-based learning that builds early language, numeracy, social skills, and love for school.</p></div>
+    <div class="card b"><h3>Key Stage 1 (Grades 1–3)</h3><p>Foundation in reading, writing, and arithmetic, taught in the learner’s mother tongue and Filipino.</p></div>
+    <div class="card s"><h3>Key Stage 2 (Grades 4–6)</h3><p>Deeper learning in English, Science, Math, Araling Panlipunan, MAPEH, and EPP.</p></div>
+  </div>
+  <h2 class="sec">Learner Services</h2>
+  <div class="grid">
+    <div class="card"><h3>Enrollment Information</h3><p>Requirements: PSA birth certificate, report card (SF9), and learner’s LRN. Enrollment forms are in <a href="#downloads">Downloads</a>.</p></div>
+    <div class="card b"><h3>Guidance and Counseling</h3><p>Support for learners’ academic, social, and emotional needs, with referrals when needed.</p></div>
+    <div class="card s"><h3>Health and Nutrition Programs</h3><p>Deworming, height and weight monitoring, and school-based feeding.</p></div>
+    <div class="card"><h3>Child Protection Policy</h3><p>Our school is a safe space. Report any form of abuse, bullying, or violence to the school head or the Child Protection Committee.</p></div>
+  </div>
+</section>
+
+<!-- NEWS + PROGRAMS -->
+<section class="page" id="news">
+  <h2>News &amp; Events</h2>
+  <h3>School News</h3><div class="grid" id="n-news"></div>
+  <h3 class="sec">Upcoming Events</h3><div class="grid" id="n-events"></div>
+  <h3 class="sec">Advisories</h3><div class="grid" id="n-advisories"></div>
+  <h3 class="sec">School Achievements</h3><div class="grid" id="n-achievements"></div>
+  <h2 class="sec">School Programs and Projects</h2>
+  <div class="grid">
+    <div class="card"><h3>DRRM Program</h3><p>Preparedness training and drills for learners and staff.</p></div>
+    <div class="card b"><h3>Reading Initiatives</h3><p>Reading camps, buddy reading, and remedial reading sessions.</p></div>
+    <div class="card s"><h3>Brigada Eskwela</h3><p>Community volunteers help prepare the school before opening of classes.</p></div>
+    <div class="card"><h3>Gulayan sa Paaralan</h3><p>School vegetable gardens that support the feeding program.</p></div>
+    <div class="card b"><h3>Feeding Program</h3><p>Nutritious meals for learners identified as undernourished.</p></div>
+    <div class="card s"><h3>Environmental Programs</h3><p>Waste segregation, tree planting, and clean-up drives.</p></div>
+  </div>
+</section>
+
+<!-- DRRM -->
+<section class="page" id="drrm">
+  <h2>School DRRM Corner</h2>
+  <div class="grid">
+    <div class="card"><h3>School Contingency Plan</h3><p>Our plan for typhoons, floods, earthquakes, and fires. Download it in <a href="#downloads">Downloads</a>.</p></div>
+    <div class="card b"><h3>Hazard Maps</h3><div class="photo">Add hazard map image here</div></div>
+    <div class="card s"><h3>Emergency Hotlines</h3>
+      <p>National Emergency: <span class="tel">911</span></p>
+      <p>Bureau of Fire Protection: (add local number)</p>
+      <p>Municipal DRRMO: (add local number)</p>
+      <p>Rural Health Unit: (add local number)</p></div>
+  </div>
+  <h3 class="sec">Drill Schedules</h3>
+  <div class="scroll"><table><thead><tr><th>Drill</th><th>Date</th><th>Time</th></tr></thead><tbody id="drills"></tbody></table></div>
+</section>
+
+<!-- GALLERY -->
+<section class="page" id="gallery">
+  <h2>Gallery</h2>
+  <p class="sub">Photos and videos are loaded from the Google Sheet (tab “Gallery”). Categories: Photos, Videos, School Events, Awarding Ceremonies, Community Activities.</p>
+  <p id="galFilters"></p>
+  <div class="grid" id="galGrid"></div>
+</section>
+
+<!-- DOWNLOADS -->
+<section class="page" id="downloads">
+  <h2>Downloads</h2>
+  <p class="sub">Enrollment Forms, School Forms, Memoranda, Reports and Templates, Learning Resources.</p>
+  <div class="scroll"><table><thead><tr><th>Title</th><th>Category</th><th>Date</th><th></th></tr></thead><tbody id="dl"></tbody></table></div>
+
+  <h2 class="sec">Teacher and Staff Document Submission</h2>
+  <p class="sub">For teachers and personnel only. Accepted: PDF, Excel, Word (max 10 MB).</p>
+  <form id="upForm">
+    <label>Full name<input name="name" required></label>
+    <label>Position<input name="position" required></label>
+    <label>Document type
+      <select name="docType" required><option>Report</option><option>Lesson Plan</option><option>School Form</option><option>Memorandum Response</option><option>Other</option></select></label>
+    <label>File<input type="file" name="file" id="file" accept=".pdf,.xls,.xlsx,.doc,.docx" required></label>
+    <label>School passcode<input type="password" name="pass" required autocomplete="off"></label>
+    <button class="btn" id="upBtn" type="submit">Submit document</button>
+    <div id="msg" role="status"></div>
+  </form>
+</section>
+
+<!-- CONTACT -->
+<section class="page" id="contact">
+  <h2>Contact Us</h2>
+  <div class="grid">
+    <div class="card"><h3>School Address</h3><p id="addr2"></p></div>
+    <div class="card b"><h3>Contact Numbers</h3><p id="phone"></p></div>
+    <div class="card s"><h3>Email Address</h3><p><a id="mail"></a></p></div>
+    <div class="card"><h3>Facebook Page</h3><p><a id="fb" target="_blank" rel="noopener">Visit our page</a></p></div>
+  </div>
+  <h3 class="sec">Location Map</h3>
+  <iframe id="map" title="School location map" loading="lazy"></iframe>
+</section>
+
+</main>
+<footer>© <span id="yr"></span> Colong-Colong Elementary School · Department of Education</footer>
+
+<script>
+/* ===== EDIT THIS SECTION ===== */
+const CFG={
+  scriptUrl:"",   // paste your Google Apps Script Web App URL here
+  tagline:"Commitment, Character, Education, Service",
+  address:"Colong-Colong, Corcuera, Romblon, Philippines",
+  phone:"(add contact number)",
+  email:"school@deped.gov.ph",
+  facebook:"https://facebook.com/",
+  maxMB:10
+};
+/* Sample data shown until the Google Sheet is connected */
+const SAMPLE={
+  News:[{category:"school news",title:"Welcome back, learners!",date:"2026-06-01",body:"Classes are now open. Let’s make this a great school year."},
+        {category:"upcoming events",title:"Brigada Eskwela",date:"2026-11-15",body:"Volunteers are invited to help clean and repair classrooms."},
+        {category:"advisories",title:"Class schedule reminder",date:"2026-10-30",body:"Please check the latest memo for schedule changes."},
+        {category:"achievements",title:"District Reading Contest",date:"2026-10-10",body:"Congratulations to our young readers!"}],
+  Personnel:[{group:"Teaching Personnel",name:"(Name)",position:"Teacher I"},
+             {group:"Non-Teaching Personnel",name:"(Name)",position:"Administrative Aide"},
+             {group:"School Governance Council",name:"(Name)",position:"Chairperson"},
+             {group:"School PTA Officers",name:"(Name)",position:"President"}],
+  Drills:[{drill:"Earthquake Drill (NSED)",date:"(date)",time:"(time)"},{drill:"Fire Drill",date:"(date)",time:"(time)"}],
+  Downloads:[{title:"Enrollment Form",category:"Enrollment Forms",date:"2026-05-01",url:"#"}],
+  Gallery:[]
+};
+/* ===== END EDIT ===== */
+
+const $=s=>document.querySelector(s), esc=t=>String(t??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const data={};
+async function load(sheet){
+  if(!CFG.scriptUrl) return SAMPLE[sheet];
+  try{const r=await fetch(CFG.scriptUrl+"?sheet="+sheet);const j=await r.json();return j.rows||SAMPLE[sheet]}catch(e){return SAMPLE[sheet]}
+}
+
+/* Navigation */
+function route(){
+  const id=(location.hash||"#home").slice(1);
+  const ok=document.getElementById(id)?.classList.contains("page")?id:"home";
+  document.querySelectorAll(".page").forEach(p=>p.classList.toggle("on",p.id===ok));
+  document.querySelectorAll("#nav a").forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+ok));
+  scrollTo(0,0);
+}
+addEventListener("hashchange",route);
+
+/* Animated welcome text (words stay whole, letters pop in one by one) */
+(function(){
+  const h=$("#welcome");let i=0;
+  "Welcome to Colong-Colong Elementary School".split(" ").forEach((word,wi)=>{
+    const w=document.createElement("span");w.className="w";if(wi>=2)w.classList.add("school");
+    w.style.animation="none";w.style.opacity=1;w.style.transform="none";
+    [...word].forEach(ch=>{const s=document.createElement("span");s.textContent=ch;s.style.animationDelay=(i++*55)+"ms";w.append(s)});
+    h.append(w,document.createTextNode(" "));
+  });
+})();
+
+const card=n=>`<article class="card"><h3>${esc(n.title)}</h3><p><small>${esc(n.date)}</small></p><p>${esc(n.body)}</p></article>`;
+const empty='<p class="sub">Nothing posted yet.</p>';
+
+async function init(){
+  $("#tagline").textContent=CFG.tagline;$("#yr").textContent=new Date().getFullYear();
+  $("#addr1").textContent=$("#addr2").textContent=CFG.address;
+  $("#phone").textContent=CFG.phone;$("#mail").textContent=CFG.email;$("#mail").href="mailto:"+CFG.email;
+  $("#fb").href=CFG.facebook;
+  $("#map").src="https://www.google.com/maps?q="+encodeURIComponent(CFG.address)+"&output=embed";
+
+  const [news,ppl,drills,dl,gal]=await Promise.all(["News","Personnel","Drills","Downloads","Gallery"].map(load));
+
+  $("#homeNews").innerHTML=(news.slice(0,3).map(card).join(""))||empty;
+  ["school news","upcoming events","advisories","achievements"].forEach(c=>{
+    const key={"school news":"news","upcoming events":"events","advisories":"advisories","achievements":"achievements"}[c];
+    $("#n-"+key).innerHTML=news.filter(n=>String(n.category).toLowerCase()===c).map(card).join("")||empty;
+  });
+
+  const groups={};ppl.forEach(p=>(groups[p.group]=groups[p.group]||[]).push(p));
+  $("#adminLists").innerHTML=Object.keys(groups).map(g=>`<h3 class="sec">${esc(g)}</h3><div class="grid">${groups[g].map(p=>`<div class="card"><h3>${esc(p.name)}</h3><p>${esc(p.position)}</p></div>`).join("")}</div>`).join("");
+
+  $("#drills").innerHTML=drills.map(d=>`<tr><td>${esc(d.drill)}</td><td>${esc(d.date)}</td><td>${esc(d.time)}</td></tr>`).join("");
+  $("#dl").innerHTML=dl.map(d=>`<tr><td>${esc(d.title)}</td><td>${esc(d.category)}</td><td>${esc(d.date)}</td><td><a href="${esc(d.url)}" target="_blank" rel="noopener">Download</a></td></tr>`).join("");
+
+  data.gal=gal;drawGallery("All");
+  route();
+}
+function drawGallery(f){
+  const cats=["All","Photos","Videos","School Events","Awarding Ceremonies","Community Activities"];
+  $("#galFilters").innerHTML=cats.map(c=>`<button class="btn" style="margin:.15rem;${c===f?"":"opacity:.6"}" data-c="${c}">${c}</button>`).join("");
+  document.querySelectorAll("#galFilters button").forEach(b=>b.onclick=()=>drawGallery(b.dataset.c));
+  const items=data.gal.filter(g=>f==="All"||g.category===f);
+  $("#galGrid").innerHTML=items.length?items.map(g=>/youtube|youtu\.be/.test(g.url)?`<div><iframe src="${esc(g.url)}" title="${esc(g.caption)}" allowfullscreen></iframe><p>${esc(g.caption)}</p></div>`:`<figure style="margin:0"><img src="${esc(g.url)}" alt="${esc(g.caption)}" loading="lazy" style="width:100%;border-radius:10px"><figcaption>${esc(g.caption)}</figcaption></figure>`).join(""):'<div class="photo">No items yet. Add rows to the “Gallery” sheet.</div>';
+}
+
+/* Document upload to Google Drive via Apps Script */
+$("#upForm").addEventListener("submit",async e=>{
+  e.preventDefault();
+  const m=$("#msg"),f=$("#file").files[0],fd=new FormData(e.target);
+  const say=(t,c)=>{m.textContent=t;m.className=c};
+  if(!CFG.scriptUrl)return say("Upload is not yet connected. Add the Apps Script URL in the CFG section.","err");
+  if(!/\.(pdf|xlsx?|docx?)$/i.test(f.name))return say("Only PDF, Excel, and Word files are allowed.","err");
+  if(f.size>CFG.maxMB*1048576)return say("File is larger than "+CFG.maxMB+" MB.","err");
+  $("#upBtn").disabled=true;say("Uploading… please wait.","");
+  try{
+    const b64=await new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result.split(",")[1]);r.onerror=rej;r.readAsDataURL(f)});
+    const body=JSON.stringify({name:fd.get("name"),position:fd.get("position"),docType:fd.get("docType"),pass:fd.get("pass"),fileName:f.name,mime:f.type,data:b64});
+    const r=await fetch(CFG.scriptUrl,{method:"POST",body}); /* text/plain avoids CORS preflight */
+    const j=await r.json();
+    if(j.ok){say("Document submitted. Thank you!","ok");e.target.reset()}else say(j.error||"Upload failed.","err");
+  }catch(err){say("Could not upload. Check your connection and try again.","err")}
+  $("#upBtn").disabled=false;
+});
+init();
+</script>
+</body>
+</html>
