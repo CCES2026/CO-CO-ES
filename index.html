@@ -200,7 +200,7 @@ footer{background:var(--blue2);color:#dbe7ff;text-align:center;padding:1.2rem;fo
 <script>
 /* ===== EDIT THIS SECTION ===== */
 const CFG={
-  scriptUrl:"",   // paste your Google Apps Script Web App URL here
+  scriptUrl:"https://script.google.com/macros/s/AKfycbyB7XoIeK-8ZS47rKuxIDfPikDTSIC2gi0ggr8k2wDJJdUzXawuJZx7vYyTTOIGfO9xww/exec",   // paste your Google Apps Script Web App URL here
   tagline:"Commitment, Character, Education, Service",
   address:"Colong-Colong, Corcuera, Romblon, Philippines",
   phone:"(add contact number)",
@@ -238,7 +238,7 @@ const $=s=>document.querySelector(s), esc=t=>String(t??"").replace(/[&<>"]/g,c=>
 const data={};
 async function load(sheet){
   if(!CFG.scriptUrl) return SAMPLE[sheet];
-  try{const r=await fetch(CFG.scriptUrl+"?sheet="+sheet);const j=await r.json();return j.rows||SAMPLE[sheet]}catch(e){return SAMPLE[sheet]}
+  try{const r=await fetch(CFG.scriptUrl+"?sheet="+sheet);const j=await r.json();return (j.rows&&j.rows.length)?j.rows:SAMPLE[sheet]}catch(e){return SAMPLE[sheet]}
 }
 
 /* Navigation */
